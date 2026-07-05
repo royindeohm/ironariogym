@@ -1,21 +1,101 @@
 /* ══════════════════════════════════════════════════════
-   IRONPULSE — app.js
-   Interactive behaviors: Navbar, Scroll Reveal, Stats Counter,
-   Testimonials Carousel, FAQ Accordion, Plans Toggle, Smooth Scroll
+   NO LIMITS NO EXCUSES — app.js
+   Interactive behaviors: WebGL Energy Shader, Navbar, 
+   Scroll Reveal, Stats Counter, Testimonials Carousel, 
+   FAQ Accordion, Plans Toggle, Smooth Scroll
 ══════════════════════════════════════════════════════ */
 
 (function () {
   'use strict';
 
   /* ──────────────────────────────────────────
-     1. NAVBAR — scroll + hamburger
+     1. WebGL ENERGY SHADER (ANIMATION_3)
+  ─────────────────────────────────────────── */
+  const canvas = document.getElementById('shader-canvas-ANIMATION_3');
+  if (canvas) {
+    function syncSize() {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      if (canvas.width !== w || canvas.height !== h) {
+        canvas.width  = w;
+        canvas.height = h;
+      }
+    }
+    window.addEventListener('resize', syncSize, { passive: true });
+    syncSize();
+
+    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    if (gl) {
+      const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+      const fs = `precision highp float;
+varying vec2 v_texCoord;
+uniform float u_time;
+uniform vec2 u_resolution;
+
+void main() {
+    vec2 uv = v_texCoord;
+    
+    // Create a dark, pulsing red energy field
+    float pulse = 0.5 + 0.5 * sin(u_time * 0.5);
+    float noise = fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);
+    
+    vec3 color1 = vec3(0.04, 0.005, 0.005); // Very dark charcoal/red
+    vec3 color2 = vec3(0.5, 0.02, 0.02); // Intense red
+    
+    float gradient = uv.y * pulse;
+    vec3 finalColor = mix(color1, color2, gradient * 0.28);
+    
+    // Add some smoke movement
+    float move = sin(uv.x * 12.0 + u_time * 0.6) * 0.04;
+    finalColor += color2 * (0.08 * sin(uv.y * 18.0 - u_time * 1.5 + move));
+    
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+      function cs(type, src) {
+        const s = gl.createShader(type);
+        gl.shaderSource(s, src);
+        gl.compileShader(s);
+        return s;
+      }
+      const prog = gl.createProgram();
+      gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+      gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+      gl.linkProgram(prog);
+      gl.useProgram(prog);
+      const buf = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+      const pos = gl.getAttribLocation(prog, 'a_position');
+      gl.enableVertexAttribArray(pos);
+      gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+      const uTime = gl.getUniformLocation(prog, 'u_time');
+      const uRes = gl.getUniformLocation(prog, 'u_resolution');
+
+      function render(t) {
+        syncSize();
+        gl.viewport(0, 0, canvas.width, canvas.height);
+        if (uTime) gl.uniform1f(uTime, t * 0.001);
+        if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        requestAnimationFrame(render);
+      }
+      render(0);
+    }
+  }
+
+  /* ──────────────────────────────────────────
+     2. NAVBAR — scroll + hamburger
   ─────────────────────────────────────────── */
   const navbar    = document.getElementById('navbar');
   const hamburger = document.getElementById('hamburger');
   const navLinks  = document.getElementById('nav-links');
   const navAnchors = navLinks ? navLinks.querySelectorAll('.nav-link') : [];
 
-  // Scroll solid transition
   function onScroll() {
     if (window.scrollY > 60) {
       navbar.classList.add('scrolled');
@@ -23,7 +103,6 @@
       navbar.classList.remove('scrolled');
     }
 
-    // Active nav highlighting
     const sections = document.querySelectorAll('section[id], header[id]');
     let currentId = '';
     sections.forEach((sec) => {
@@ -38,7 +117,6 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // Hamburger toggle
   if (hamburger && navLinks) {
     hamburger.addEventListener('click', () => {
       const open = hamburger.classList.toggle('open');
@@ -46,7 +124,6 @@
       hamburger.setAttribute('aria-expanded', open.toString());
     });
 
-    // Close menu on link click (mobile)
     navAnchors.forEach((a) => {
       a.addEventListener('click', () => {
         hamburger.classList.remove('open');
@@ -57,7 +134,7 @@
   }
 
   /* ──────────────────────────────────────────
-     2. SMOOTH ANCHOR SCROLL
+     3. SMOOTH ANCHOR SCROLL
   ─────────────────────────────────────────── */
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (e) => {
@@ -72,7 +149,7 @@
   });
 
   /* ──────────────────────────────────────────
-     3. SCROLL REVEAL
+     4. SCROLL REVEAL
   ─────────────────────────────────────────── */
   const revealEls = document.querySelectorAll('.reveal');
 
@@ -85,20 +162,20 @@
         }
       });
     },
-    { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
+    { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
   );
 
   revealEls.forEach((el) => revealObserver.observe(el));
 
   /* ──────────────────────────────────────────
-     4. ANIMATED COUNTER
+     5. ANIMATED COUNTER
   ─────────────────────────────────────────── */
   function animateCounter(el) {
     const target = parseInt(el.dataset.target, 10);
     const suffix = el.dataset.suffix || '';
     if (isNaN(target)) return;
 
-    const duration = 1800;
+    const duration = 1500;
     const step     = 16;
     const steps    = duration / step;
     let current    = 0;
@@ -127,7 +204,6 @@
   );
   counters.forEach((c) => counterObserver.observe(c));
 
-  // About-section inline stat counters (data-target only, no counter class)
   const inlineCounters = document.querySelectorAll('.stat-num[data-target]');
   const inlineCounterObserver = new IntersectionObserver(
     (entries) => {
@@ -143,7 +219,7 @@
   inlineCounters.forEach((c) => inlineCounterObserver.observe(c));
 
   /* ──────────────────────────────────────────
-     5. PLANS BILLING TOGGLE
+     6. PLANS BILLING TOGGLE
   ─────────────────────────────────────────── */
   const toggleMonthly = document.getElementById('toggle-monthly');
   const toggleYearly  = document.getElementById('toggle-yearly');
@@ -167,7 +243,7 @@
   }
 
   /* ──────────────────────────────────────────
-     6. TESTIMONIALS CAROUSEL
+     7. TESTIMONIALS CAROUSEL
   ─────────────────────────────────────────── */
   const track    = document.getElementById('testi-track');
   const prevBtn  = document.getElementById('testi-prev');
@@ -178,7 +254,6 @@
     const cards = track.querySelectorAll('.testi-card');
     let current = 0;
 
-    // Build dots
     cards.forEach((_, i) => {
       const dot = document.createElement('button');
       dot.className = 'dot' + (i === 0 ? ' active' : '');
@@ -200,13 +275,11 @@
       const maxIdx  = total - visible;
       current = Math.max(0, Math.min(idx, maxIdx));
 
-      // Calculate offset
       const cardWidth   = cards[0].offsetWidth;
-      const gap         = 24; // 1.5rem gap
+      const gap         = 24;
       const offset      = current * (cardWidth + gap);
       track.style.transform = `translateX(-${offset}px)`;
 
-      // Update dots
       const dots = dotsWrap.querySelectorAll('.dot');
       dots.forEach((d, i) => d.classList.toggle('active', i === current));
     }
@@ -214,7 +287,6 @@
     if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
     if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
 
-    // Auto-play
     let autoplay = setInterval(() => goTo(current + 1 > cards.length - getVisibleCount() ? 0 : current + 1), 5000);
 
     const carouselEl = document.getElementById('testimonials-carousel');
@@ -225,7 +297,6 @@
       });
     }
 
-    // Touch / swipe support
     let touchStartX = 0;
     track.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
     track.addEventListener('touchend', (e) => {
@@ -237,7 +308,7 @@
   }
 
   /* ──────────────────────────────────────────
-     7. FAQ ACCORDION
+     8. FAQ ACCORDION
   ─────────────────────────────────────────── */
   const faqBtns = document.querySelectorAll('.faq-question');
 
@@ -246,7 +317,6 @@
       const expanded = btn.getAttribute('aria-expanded') === 'true';
       const answer   = btn.nextElementSibling;
 
-      // Collapse all others
       faqBtns.forEach((b) => {
         if (b !== btn) {
           b.setAttribute('aria-expanded', 'false');
@@ -254,43 +324,22 @@
         }
       });
 
-      // Toggle current
       btn.setAttribute('aria-expanded', (!expanded).toString());
       answer.classList.toggle('open', !expanded);
     });
   });
 
   /* ──────────────────────────────────────────
-     8. HERO PARALLAX (subtle)
+     9. HERO PARALLAX
   ─────────────────────────────────────────── */
   const heroImg = document.querySelector('.hero-img');
   if (heroImg) {
     window.addEventListener('scroll', () => {
       const scrolled = window.scrollY;
       if (scrolled < window.innerHeight) {
-        heroImg.style.transform = `scale(1) translateY(${scrolled * 0.25}px)`;
+        heroImg.style.transform = `scale(1.05) translateY(${scrolled * 0.22}px)`;
       }
     }, { passive: true });
-  }
-
-  /* ──────────────────────────────────────────
-     9. LAZY IMAGE LOADING FALLBACK
-  ─────────────────────────────────────────── */
-  if ('loading' in HTMLImageElement.prototype) {
-    // Native lazy loading supported
-  } else {
-    // Polyfill-lite: observe and set src
-    const lazyImgs = document.querySelectorAll('img[loading="lazy"]');
-    const lazyObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          img.src = img.dataset.src || img.src;
-          lazyObserver.unobserve(img);
-        }
-      });
-    });
-    lazyImgs.forEach((img) => lazyObserver.observe(img));
   }
 
 })();
