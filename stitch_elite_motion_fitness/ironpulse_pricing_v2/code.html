@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>IRONPULSE | Membership Pricing</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&amp;family=Hanken+Grotesk:wght@400;500;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#e5e2e1",
+                        "on-secondary-container": "#b7b5b4",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "on-secondary": "#313030",
+                        "tertiary-container": "#c6c4c4",
+                        "on-primary-container": "#6b4c00",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary": "#c8c6c5",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface": "#131313",
+                        "secondary-container": "#474746",
+                        "surface-dim": "#131313",
+                        "inverse-on-surface": "#313030",
+                        "secondary-fixed": "#e5e2e1",
+                        "primary-fixed": "#ffdea8",
+                        "inverse-surface": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#515151",
+                        "on-primary": "#412d00",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#ffba20",
+                        "surface-bright": "#3a3939",
+                        "on-surface-variant": "#d5c4ab",
+                        "outline": "#9e8f78",
+                        "surface-container-low": "#1c1b1b",
+                        "on-tertiary": "#303030",
+                        "surface-container": "#201f1f",
+                        "on-primary-fixed-variant": "#5e4200",
+                        "inverse-primary": "#7c5800",
+                        "tertiary-fixed": "#e4e2e1",
+                        "on-primary-fixed": "#271900",
+                        "surface-variant": "#353534",
+                        "primary-container": "#ffb800",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "surface-tint": "#ffba20",
+                        "tertiary": "#e2e0df",
+                        "on-secondary-fixed-variant": "#474746",
+                        "primary": "#ffdca1",
+                        "surface-container-highest": "#353534",
+                        "background": "#131313",
+                        "outline-variant": "#514532",
+                        "error": "#ffb4ab",
+                        "on-background": "#e5e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "display-xl": ["Oswald"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Oswald"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Oswald"]
+                    },
+                    "fontSize": {
+                        "display-xl": ["84px", { "lineHeight": "90px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "52px", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "36px", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .heavy-snap {
+            transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .glass-card {
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .amber-glow:hover {
+            box-shadow: 0 0 25px rgba(255, 184, 0, 0.4);
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #0A0A0A; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #ffb800; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container custom-scrollbar">
+<!-- TopNavBar -->
+<header class="bg-surface/80 dark:bg-surface/80 backdrop-blur-xl docked full-width top-0 sticky z-50 border-b border-outline-variant/30 shadow-md">
+<nav class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-display-xl text-headline-lg-mobile tracking-tighter text-primary-container dark:text-primary-container">
+                IRONPULSE
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps" href="#">Classes</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps" href="#">Schedule</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps" href="#">Trainers</a>
+<a class="text-primary-container font-bold border-b-2 border-primary-container pb-1 font-label-caps text-label-caps" href="#">Pricing</a>
+</div>
+<button class="bg-primary-container text-on-primary-container font-label-caps px-6 py-2 heavy-snap active:scale-95 hover:bg-primary/10 transition-all duration-300">
+                JOIN ELITE
+            </button>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[716px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center opacity-50 grayscale" data-alt="A cinematic, low-key photograph of a powerful muscular athlete standing in a dark, atmospheric industrial gym. Thick white smoke or steam swirls around his legs against an obsidian background. The lighting is dramatic and high-contrast, catching the definition of his physique with sharp highlights and deep shadows. The overall mood is aggressive, disciplined, and luxurious." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB5FzcH4RIC0CWePfamO1O_9dmx2hfizHwjPMew3CUym78wyqmm16r3nE-SjZX6VGjaoWFyxYJZFNBEBHwvt0GIosLXckjeH6R42dcgxfZdn48O1k7QpQux4k4PiRmQ14SHZkLa4s7hBPPHnGmIy5CmVq7niDfGkFeGfYozu2VHANUzyor0cR3VDESx0KwjoOQOCWUGT8e1cg9vBjTHyWt4rdc_5wkoAkbKm2QKquhSlkkucnvhKSwOeu4gb32wg9-6YeT_Vz9fOC_B')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 w-full px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="h-[2px] w-12 bg-primary-container"></div>
+<span class="font-label-caps text-label-caps text-primary-container uppercase tracking-widest">Join Now</span>
+</div>
+<h1 class="font-display-xl text-display-xl uppercase leading-none">Pricing &amp; <br/><span class="text-primary-container">Plans</span></h1>
+<p class="max-w-md text-on-surface-variant font-body-md leading-relaxed">
+                        Precision engineering for your physical potential. Choose the tier that matches your intensity. Our laboratory is open for those who demand excellence.
+                    </p>
+</div>
+<div class="hidden md:block relative h-full">
+<div class="absolute -right-20 top-1/2 -translate-y-1/2 font-display-xl text-[240px] leading-none text-outline-variant/10 pointer-events-none select-none">
+                        PULSE
+                    </div>
+</div>
+</div>
+</section>
+<!-- Pricing Cards Section -->
+<section class="py-24 px-margin-desktop max-w-container-max mx-auto -mt-32 relative z-20">
+<div class="text-center mb-16 space-y-4">
+<span class="font-label-caps text-label-caps text-primary-container">Start The Process</span>
+<h2 class="font-headline-lg text-headline-lg uppercase">CHOOSE YOUR PLAN</h2>
+<!-- Toggle -->
+<div class="inline-flex bg-surface-container-low p-1 border border-outline-variant/20 rounded-none mt-8">
+<button class="px-8 py-2 font-label-caps text-label-caps bg-surface text-on-surface-variant heavy-snap">MONTHLY</button>
+<button class="px-8 py-2 font-label-caps text-label-caps bg-primary-container text-on-primary-container heavy-snap">YEARLY</button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter items-end">
+<!-- Basic Training -->
+<div class="glass-card p-unit*5 flex flex-col items-center text-center space-y-8 border-t-2 border-t-transparent hover:border-t-outline transition-all duration-500">
+<div class="space-y-2">
+<h3 class="font-headline-lg text-[24px] uppercase text-primary-container">LITE TRAINING</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase">Foundation &amp; Discipline</p>
+</div>
+<div class="flex flex-col">
+<span class="font-display-xl text-[64px] leading-none text-on-surface">$59</span>
+<span class="font-label-caps text-label-caps text-outline">PER MONTH</span>
+</div>
+<ul class="w-full space-y-4 text-left border-y border-outline-variant/20 py-8">
+<li class="flex items-center gap-3 font-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-primary-container scale-75">check_circle</span>
+                            60 Minute Sessions
+                        </li>
+<li class="flex items-center gap-3 font-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-primary-container scale-75">check_circle</span>
+                            Standard Gym Access
+                        </li>
+<li class="flex items-center gap-3 font-body-md text-on-surface-variant opacity-40">
+<span class="material-symbols-outlined scale-75">cancel</span>
+                            Private Locker Room
+                        </li>
+<li class="flex items-center gap-3 font-body-md text-on-surface-variant opacity-40">
+<span class="material-symbols-outlined scale-75">cancel</span>
+                            Elite Trainer 1-on-1
+                        </li>
+</ul>
+<button class="w-full py-4 border-2 border-primary-container font-label-caps text-label-caps text-primary-container hover:bg-primary-container hover:text-on-primary-container heavy-snap amber-glow">
+                        CHOOSE
+                    </button>
+</div>
+<!-- Elite Performance (Featured) -->
+<div class="bg-primary-container p-unit*6 flex flex-col items-center text-center space-y-8 relative transform scale-105 shadow-2xl z-10">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-on-primary-container text-primary-container font-label-caps text-[10px] px-4 py-1 tracking-widest">
+                        MOST POPULAR
+                    </div>
+<div class="space-y-2">
+<h3 class="font-headline-lg text-[32px] uppercase text-on-primary">ELITE PERFORMANCE</h3>
+<p class="font-label-caps text-label-caps text-on-primary-fixed-variant uppercase">Peak Optimization</p>
+</div>
+<div class="flex flex-col">
+<span class="font-display-xl text-[84px] leading-none text-on-primary">$119</span>
+<span class="font-label-caps text-label-caps text-on-primary-fixed-variant">PER MONTH</span>
+</div>
+<ul class="w-full space-y-4 text-left border-y border-on-primary-container/20 py-8">
+<li class="flex items-center gap-3 font-body-md text-on-primary font-bold">
+<span class="material-symbols-outlined text-on-primary scale-90">check_circle</span>
+                            Unlimited Session Access
+                        </li>
+<li class="flex items-center gap-3 font-body-md text-on-primary font-bold">
+<span class="material-symbols-outlined text-on-primary scale-90">check_circle</span>
+                            Private Recovery Zone
+                        </li>
+<li class="flex items-center gap-3 font-body-md text-on-primary font-bold">
+<span class="material-symbols-outlined text-on-primary scale-90">check_circle</span>
+                            Nutritional Benchmarking
+                        </li>
+<li class="flex items-center gap-3 font-body-md text-on-primary font-bold">
+<span class="material-symbols-outlined text-on-primary scale-90">check_circle</span>
+                            Monthly Trainer Review
+                        </li>
+</ul>
+<button class="w-full py-4 bg-on-primary text-primary-container font-label-caps text-label-caps hover:bg-on-primary-container heavy-snap transition-colors">
+                        CHOOSE
+                    </button>
+</div>
+<!-- Athlete Pro -->
+<div class="glass-card p-unit*5 flex flex-col items-center text-center space-y-8 border-t-2 border-t-transparent hover:border-t-outline transition-all duration-500"><div class="bg-primary-container text-on-primary-container font-label-caps text-[10px] px-4 py-1 tracking-widest mb-4">
+RECOMMENDED FOR PROS
+</div>
+<div class="space-y-2">
+<h3 class="font-headline-lg text-[24px] uppercase text-primary-container">ATHLETE PRO</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase">Uncompromising Power</p>
+</div>
+<div class="flex flex-col">
+<span class="font-display-xl text-[64px] leading-none text-on-surface">$159</span>
+<span class="font-label-caps text-label-caps text-outline">PER MONTH</span>
+</div>
+<ul class="w-full space-y-4 text-left border-y border-outline-variant/20 py-8">
+<li class="flex items-center gap-3 font-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-primary-container scale-75">check_circle</span>
+                            24/7 Laboratory Access
+                        </li>
+<li class="flex items-center gap-3 font-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-primary-container scale-75">check_circle</span>
+                            Weekly 1-on-1 Coaching
+                        </li>
+<li class="flex items-center gap-3 font-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-primary-container scale-75">check_circle</span>
+                            Biometric Data Suite
+                        </li>
+<li class="flex items-center gap-3 font-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-primary-container scale-75">check_circle</span>
+                            VIP Recovery Suite
+                        </li>
+</ul>
+<button class="w-full py-4 border-2 border-primary-container font-label-caps text-label-caps text-primary-container hover:bg-primary-container hover:text-on-primary-container heavy-snap amber-glow">
+                        CHOOSE
+                    </button>
+</div>
+</div>
+</section>
+<!-- Comparison Table Section -->
+<section class="py-24 px-margin-desktop max-w-container-max mx-auto"><div class="mb-12">
+<h2 class="font-headline-lg text-[32px] uppercase">Compare Cultpass Benefits</h2>
+<div class="h-1 w-24 bg-primary-container mt-4"></div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="border-b border-outline-variant/30 text-left font-label-caps text-label-caps text-outline uppercase tracking-widest">
+<th class="py-6 px-4">Access Level</th>
+<th class="py-6 px-4">Lite (Basic)</th>
+<th class="py-6 px-4 text-primary-container">Elite</th>
+<th class="py-6 px-4">Pro</th>
+</tr>
+</thead>
+<tbody class="font-body-md">
+<tr class="border-b border-outline-variant/10 hover:bg-surface-container transition-colors">
+<td class="py-6 px-4">Group Classes</td>
+<td class="py-6 px-4 text-outline-variant"><span class="material-symbols-outlined">close</span></td>
+<td class="py-6 px-4 text-on-surface font-bold italic">Unlimited At-center</td>
+<td class="py-6 px-4">2 Sessions/month</td>
+</tr>
+<tr class="border-b border-outline-variant/10 hover:bg-surface-container transition-colors">
+<td class="py-6 px-4">Gym Access</td>
+<td class="py-6 px-4">Single Center</td>
+<td class="py-6 px-4 text-primary-container">All ELITE &amp; PRO</td>
+<td class="py-6 px-4">All PRO Gyms</td>
+</tr>
+<tr class="border-b border-outline-variant/10 hover:bg-surface-container transition-colors">
+<td class="py-6 px-4">At-home Live Workouts</td>
+<td class="py-6 px-4 text-primary-container"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span></td>
+<td class="py-6 px-4 text-primary-container"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span></td>
+<td class="py-6 px-4 text-primary-container"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span></td>
+</tr>
+<tr class="border-b border-outline-variant/10 hover:bg-surface-container transition-colors">
+<td class="py-6 px-4">Sports (Badminton/Swim)</td>
+<td class="py-6 px-4 text-outline-variant"><span class="material-symbols-outlined">close</span></td>
+<td class="py-6 px-4 text-primary-container"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span></td>
+<td class="py-6 px-4 text-outline-variant"><span class="material-symbols-outlined">close</span></td>
+</tr>
+</tbody>
+</table>
+</div></section>
+<!-- Dynamic CTA -->
+<section class="py-24 bg-surface-container-lowest overflow-hidden relative">
+<div class="absolute inset-0 opacity-10">
+<div class="h-full w-full bg-[linear-gradient(45deg,#ffb800_1px,transparent_1px),linear-gradient(-45deg,#ffb800_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+</div>
+<div class="relative z-10 px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-gutter">
+<div class="max-w-xl">
+<h2 class="font-display-xl text-headline-lg-mobile md:text-headline-lg uppercase mb-4">Unsure where to start?</h2>
+<p class="text-on-surface-variant font-body-md">Schedule a complimentary diagnostic session with our head performance lab technicians today.</p>
+</div>
+<button class="bg-primary-container text-on-primary-container font-label-caps px-12 py-5 heavy-snap hover:scale-105 active:scale-95 shadow-xl hover:shadow-primary-container/20">
+                    BOOK DIAGNOSTIC
+                </button>
+</div>
+</section><section class="py-16 bg-primary-container text-on-primary-container">
+<div class="px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-[48px]">experimental_physician</span>
+<div>
+<h3 class="font-headline-lg text-[24px] uppercase leading-tight">Experience the Laboratory</h3>
+<p class="font-body-md opacity-80">Get your 1-Day Free Pass and test our high-octane facilities.</p>
+</div>
+</div>
+<button class="bg-on-primary-container text-primary-container font-label-caps px-10 py-4 heavy-snap hover:bg-on-primary transition-colors">
+GET 1-DAY FREE PASS
+</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20 w-full pt-16 pb-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1 space-y-6">
+<div class="font-display-xl text-headline-lg text-primary-container">IRONPULSE</div>
+<p class="font-body-md text-on-surface-variant max-w-xs">
+                    Engineering human potential through high-octane physical discipline and technical precision.
+                </p>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-caps text-label-caps text-on-surface">LOCATIONS</h4>
+<ul class="space-y-2">
+<li><a class="font-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Downtown Labs</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">The Warehouse</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">District 01</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-caps text-label-caps text-on-surface">RESOURCES</h4>
+<ul class="space-y-2">
+<li><a class="font-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Training Logs</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">The Journal</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-caps text-label-caps text-on-surface">LEGAL</h4>
+<ul class="space-y-2">
+<li><a class="font-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-16 px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center border-t border-outline-variant/10 pt-8 gap-4">
+<p class="font-label-caps text-[10px] text-outline">© 2024 IRONPULSE PERFORMANCE LABORATORY. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-all" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-all" href="#"><span class="material-symbols-outlined">mail</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-all" href="#"><span class="material-symbols-outlined">bolt</span></a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple scroll effect for glassmorphism navbar
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-xl', 'bg-surface/95');
+            } else {
+                header.classList.remove('shadow-xl', 'bg-surface/95');
+            }
+        });
+
+        // Hover animation logic for cards
+        const cards = document.querySelectorAll('.glass-card');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>IRONPULSE | Performance Laboratory</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&amp;family=Hanken+Grotesk:wght@400;500;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#e5e2e1",
+                    "on-secondary-container": "#b7b5b4",
+                    "tertiary-fixed-dim": "#c8c6c6",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "on-secondary": "#313030",
+                    "tertiary-container": "#c6c4c4",
+                    "on-primary-container": "#6b4c00",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-high": "#2a2a2a",
+                    "secondary": "#c8c6c5",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "surface": "#131313",
+                    "secondary-container": "#474746",
+                    "surface-dim": "#131313",
+                    "inverse-on-surface": "#313030",
+                    "secondary-fixed": "#e5e2e1",
+                    "primary-fixed": "#ffdea8",
+                    "inverse-surface": "#e5e2e1",
+                    "error-container": "#93000a",
+                    "on-tertiary-container": "#515151",
+                    "on-primary": "#412d00",
+                    "on-error": "#690005",
+                    "primary-fixed-dim": "#ffba20",
+                    "surface-bright": "#3a3939",
+                    "on-surface-variant": "#d5c4ab",
+                    "outline": "#9e8f78",
+                    "surface-container-low": "#1c1b1b",
+                    "on-tertiary": "#303030",
+                    "surface-container": "#201f1f",
+                    "on-primary-fixed-variant": "#5e4200",
+                    "inverse-primary": "#7c5800",
+                    "tertiary-fixed": "#e4e2e1",
+                    "on-primary-fixed": "#271900",
+                    "surface-variant": "#353534",
+                    "primary-container": "#ffb800",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-tertiary-fixed-variant": "#474747",
+                    "surface-tint": "#ffba20",
+                    "tertiary": "#e2e0df",
+                    "on-secondary-fixed-variant": "#474746",
+                    "primary": "#ffdca1",
+                    "surface-container-highest": "#353534",
+                    "background": "#131313",
+                    "outline-variant": "#514532",
+                    "error": "#ffb4ab",
+                    "on-background": "#e5e2e1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "margin-desktop": "64px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "display-xl": ["Oswald"],
+                    "body-md": ["Hanken Grotesk"],
+                    "headline-lg": ["Oswald"],
+                    "label-caps": ["JetBrains Mono"],
+                    "headline-lg-mobile": ["Oswald"]
+            },
+            "fontSize": {
+                    "display-xl": ["84px", {"lineHeight": "90px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "52px", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "36px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #0A0A0A; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48; }
+        .heavy-snap { transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1); }
+        .glow-hover:hover { box-shadow: 0 0 20px rgba(255, 184, 0, 0.4); }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .bento-card { border: 1px solid #2D2D2D; background-color: #1A1A1A; }
+    </style>
+</head>
+<body class="text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-md docked full-width top-0 sticky z-50">
+<nav class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-display-xl text-headline-lg-mobile tracking-tighter text-primary-container dark:text-primary-container">IRONPULSE</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-primary-container font-bold border-b-2 border-primary-container pb-1 font-label-caps text-label-caps" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps" href="#">Classes</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps" href="#">Schedule</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps" href="#">Trainers</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps" href="#">Pricing</a>
+</div>
+<button class="bg-primary-container text-on-primary font-display-xl px-6 py-2 uppercase hover:scale-105 heavy-snap glow-hover">
+                JOIN ELITE
+            </button>
+</nav>
+</header>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+<div class="relative z-10 text-center px-margin-mobile md:px-margin-desktop">
+<span class="font-label-caps text-label-caps text-primary-container mb-4 block tracking-[0.3em] reveal">EST. MMXXIV</span>
+<h1 class="font-display-xl text-display-xl uppercase mb-6 reveal">FORGE YOUR LEGACY</h1>
+<p class="font-body-md text-on-secondary-container max-w-2xl mx-auto mb-10 reveal">
+                Elite performance laboratory for the dedicated. We don't just train; we engineer human potential through scientific rigor and industrial-grade discipline.
+            </p>
+<div class="reveal">
+<button class="bg-primary-container text-on-primary font-display-xl text-xl px-12 py-4 uppercase heavy-snap hover:scale-105 glow-hover">
+                    JOIN THE ELITE
+                </button>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+<span class="material-symbols-outlined text-primary-container text-4xl">keyboard_double_arrow_down</span>
+</div>
+</section>
+<!-- Mission Section -->
+<section class="py-24 bg-surface px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="reveal">
+<span class="font-label-caps text-label-caps text-primary-container mb-2 block">OUR PHILOSOPHY</span>
+<h2 class="font-headline-lg text-headline-lg uppercase mb-8">THE LABORATORY OF EXCELLENCE</h2>
+<p class="text-on-surface-variant mb-6 leading-relaxed">
+                    At IRONPULSE, we view the body as a machine that requires precise calibration. Our mission is to provide the high-octane environment needed for high-achievers to break through their biological ceilings.
+                </p>
+<div class="grid grid-cols-2 gap-8 mt-12">
+<div>
+<div class="text-primary-container font-display-xl text-4xl mb-2">99%</div>
+<div class="font-label-caps text-xs text-on-secondary-container">SUCCESS RATE</div>
+</div>
+<div>
+<div class="text-primary-container font-display-xl text-4xl mb-2">24/7</div>
+<div class="font-label-caps text-xs text-on-secondary-container">ELITE ACCESS</div>
+</div>
+</div>
+</div>
+<div class="relative group reveal">
+<div class="absolute inset-0 bg-primary-container/10 -translate-x-4 -translate-y-4 heavy-snap group-hover:translate-x-0 group-hover:translate-y-0"></div>
+<img class="relative z-10 w-full h-[600px] object-cover border border-outline-variant/30" data-alt="A cinematic, low-key black and white photograph of a professional athlete performing a heavy deadlift in a dark industrial gym. The lighting is harsh and dramatic, highlighting the texture of muscle and the metallic sheen of the weight plates. Subtle smoke or dust hangs in the air, captured by the intense spotlights, creating a mood of gritty determination and power." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCd9SEunTCiLoIbpOmKtuc6OqTgNT9u2m_pEGHxIEfCNKIKzYzgXFHF8rSjpOkGCrgpYu6bCoRlJFI4n08ojOtgwu8yeHIImn4fMNC_eA6GXnhVs6uIrobsYogPnnp9NW3y8P9puDxwJOep8J1voCnexFPZGPFoZdVkIbUywcJ9NiKb_CKHioopcmdLg-W00uDNdmjHOOyaZ4zsHZ2pls3a9rI1MNt5a7vad69DSRO_SYQaJ4V2WEPFOc2ifvA-kD6Obq2GrSukKmyZ"/>
+</div>
+</div>
+</section><section class="py-24 bg-surface-container-lowest px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16 reveal">
+<span class="font-label-caps text-label-caps text-primary-container mb-2 block">PULSE COMMUNITY</span>
+<h2 class="font-headline-lg text-headline-lg uppercase mb-4">ONE MEMBERSHIP FOR ALL YOUR NEEDS</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">A fitness movement worth breaking a sweat for. Join the cult family and experience the .fit way.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bento-card p-8 reveal">
+<div class="h-64 mb-6 overflow-hidden">
+<img alt="Yoga Training" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLv37CKYKvRZAeXgKQ9eNg4AmTUNEJIxbMzu3F5HuhEJBAaBUW7IX796chfidnHC3dtGJ8FDX3ZOMWpxLWadnaYvBzHWbdeoGmLxz3WSwLhKsE4YbtHlSQdqdcYilGv2wDal9iIxfxsaQCPEBXYVKaCtRa470SgnpcQ8yPzrzpiKwxmKDiBRiWjjnSgD3piZZyInVoT9C4dVRyFcQ4EuLXkDWt1WkAUcZpSbbsI1OWzAaFpDjBKwPCRbx4YZ"/>
+</div>
+<h3 class="font-display-xl text-2xl uppercase mb-4">MIND &amp; BODY</h3>
+<p class="text-on-secondary-container text-sm">Mental fitness made easy with yoga and meditation. Find your center in our high-performance labs.</p>
+</div>
+<div class="bento-card p-8 reveal">
+<div class="h-64 mb-6 overflow-hidden">
+<img alt="Dance Training" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLtNyUEJArtaL7hyOiWAdeZ5Yo2_Co_KCDgGj727FWKN5EbCygf1CXy75MDmOANlH9L_nxR9kWNyBejW_cRkxkCtgFXFCS1TCms5_Q3YfGaVBAcIX4YAmgxEGHIAcOImVZtK7-TFMOXf-z0xLVoZvTbfEeeBa2tWGVpRshSNKfvUMIFEEFDbE0YTsjIDByJfrN-DmFUGxeUuUcZe7lKs0xnQtH1iXyc_FNXbtXDlV7Ki9qyr7tPIvqSo46KH"/>
+</div>
+<h3 class="font-display-xl text-2xl uppercase mb-4">DYNAMIC MOVEMENT</h3>
+<p class="text-on-secondary-container text-sm">Fun, trainer-led group classes that make group workouts the highlight of your day.</p>
+</div>
+<div class="bento-card p-8 reveal">
+<div class="h-64 mb-6 overflow-hidden">
+<img alt="Strength Training" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLsemCXt2pqQvLeYO1zcL91GyYGrbfI3POPmhAfjxIIHGrbJz2k09weDuV42qH1XJ4_9mNILbp10dT6bw_lDQ0fuvTvF7SXMKLeyHAXfIEDGHJomdlX0obtiTgF14kqZuo5KY2J2nvkpWdoEMuOFgwgBVqQhc0QBemobUriwukFUg2WQwzNYQQDa5S8lWQHUSiToAeZ2Au4FqTDNucxGyV6cnqn3zQbsY2d1opBDwiAnr8L4HsddRdmasHaS"/>
+</div>
+<h3 class="font-display-xl text-2xl uppercase mb-4">ELITE STRENGTH</h3>
+<p class="text-on-secondary-container text-sm">Unlimited access to ELITE &amp; PRO gyms. Engineered for those who demand the absolute best.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Programs (Bento Grid) -->
+<section class="py-24 bg-surface-container-lowest px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16 reveal">
+<h2 class="font-headline-lg text-headline-lg uppercase mb-4">ENGINEERED PROGRAMS</h2>
+<p class="font-label-caps text-label-caps text-on-secondary-container">CHOOSE YOUR PATH TO DOMINANCE</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter h-auto md:h-[600px]">
+<!-- Strength -->
+<div class="md:col-span-8 bento-card relative overflow-hidden group reveal">
+<div class="absolute inset-0 z-0 opacity-40 transition-transform duration-700 group-hover:scale-110">
+<img class="w-full h-full object-cover" data-alt="A high-contrast wide shot of a row of heavy-duty power racks in a modern industrial gym. The color palette is dominated by deep obsidian and dark charcoal with electric amber lighting strips outlining the equipment. The atmosphere is clean, professional, and intimidatingly high-tech, evoking a sense of scientific physical preparation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAezedAl-voM4tFhcx3ZOWVfQLZHECQytK6S8-lZrnup2OHmBDKLAXKmQeV71n7sQZn5ZJR-d0sZemNlZvtfnLR3Pn5I-FIrg2y89G-XsnwZpPUb0ZqA2KjvJlvikrudqbh_LtdpLosd9NG5OKKkzLPbBzQ7WdVvMlIeFk441QcACzjh2fnFL6ZZiFvprJeZQVKc_DhYG2wxhrLv01ujAmeeOxhBBJ7Ucx90OrHSLi0Tq4gVrrKIPBpCxbWcH7UEjgI9d_6AOMCWli3"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+<div class="absolute bottom-0 left-0 p-10 z-20">
+<span class="font-label-caps text-label-caps text-primary-container">PROGRAM 01</span>
+<h3 class="font-display-xl text-4xl uppercase mt-2 mb-4">ABSOLUTE STRENGTH</h3>
+<p class="text-on-secondary-container max-w-md">Focus on compound movements and CNS adaptation to build a foundation of raw power.</p>
+</div>
+</div>
+<!-- Performance -->
+<div class="md:col-span-4 bento-card relative overflow-hidden group reveal">
+<div class="absolute inset-0 z-0 opacity-40 transition-transform duration-700 group-hover:scale-110">
+<img class="w-full h-full object-cover" data-alt="Close-up detail of a high-performance athlete's hands gripping a knurled steel barbell. The scene is shot in a dark, luxury fitness environment with sharp, focused amber highlights on the texture of the metal and the athlete's skin. The aesthetic is minimal, industrial, and hyper-focused on the technical aspect of elite performance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVhINRzE5t1XZsVscVVRsmfdDTMx0YFKyqG6Grf1GE2M8l6kX_bOu4m2Nvu-v8c4L_MwH1HyVz9ReeQCDmLGcLDlx1pv_JVSVYJlgx7i2QpT21f9f6rlQAnZLC41Bu_EF9kxOUX3yUwUlXP3vd5-8mNbBru4vzb0DT-b5PPZ5lxNn9A5uv0NjktUKW2b5I-1X6pC6it6H9z6nhOyCHL_VwOYAxaD9ZMohRvIqlrYBDgHjK0VlYWzjhjSnUhcbRQ69UyDX-C--fI7R3"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+<div class="absolute bottom-0 left-0 p-10 z-20">
+<span class="font-label-caps text-label-caps text-primary-container">PROGRAM 02</span>
+<h3 class="font-display-xl text-4xl uppercase mt-2 mb-4">PERFORMANCE</h3>
+<button class="mt-4 border-b-2 border-primary-container pb-1 font-label-caps text-xs tracking-widest uppercase">Explore Lab</button>
+</div>
+</div>
+<!-- Hypertrophy -->
+<div class="md:col-span-12 bento-card h-[300px] relative overflow-hidden group reveal">
+<div class="absolute inset-0 z-0 opacity-20">
+</div>
+<div class="absolute inset-0 flex items-center justify-between px-10 z-20">
+<div>
+<span class="font-label-caps text-label-caps text-primary-container">PROGRAM 03</span>
+<h3 class="font-display-xl text-4xl uppercase mt-2">METABOLIC HYPERTROPHY</h3>
+</div>
+<div class="hidden md:block max-w-sm text-on-secondary-container">
+                            Advanced aesthetic development through volume-focused protocols and nutritional precision.
+                        </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section (Inspired by Image) -->
+<section class="py-24 bg-surface px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto text-center">
+<div class="mb-16 reveal">
+<div class="w-10 h-1 bg-primary-container mx-auto mb-6"></div>
+<span class="font-label-caps text-label-caps text-on-secondary-container block mb-2">START THE PROCESS</span>
+<h2 class="font-headline-lg text-headline-lg uppercase text-primary-container">CHOOSE YOUR PLAN</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+<!-- Group -->
+<div class="bento-card p-12 flex flex-col items-center reveal">
+<h3 class="font-headline-lg text-2xl uppercase text-primary-container mb-1">GROUP TRAINING</h3>
+<p class="font-label-caps text-[10px] text-on-secondary-container mb-8">Coach and Exercise</p>
+<div class="mb-8">
+<span class="font-display-xl text-6xl text-primary-container">$59</span>
+<span class="font-label-caps text-xs block text-on-secondary-container">per month</span>
+</div>
+<div class="space-y-4 text-sm text-on-surface-variant mb-12 flex-grow">
+<p class="font-label-caps text-xs text-on-surface border-b border-outline-variant/30 pb-2 mb-4">Training Session Includes</p>
+<p>60 Minute Sessions</p>
+<p>Private Gym</p>
+<p>Access to Labs</p>
+</div>
+<button class="w-full border-2 border-primary-container py-3 font-display-xl uppercase heavy-snap hover:bg-primary-container hover:text-on-primary">CHOOSE</button>
+</div>
+<!-- Private (Featured) -->
+<div class="bg-primary-container p-12 flex flex-col items-center transform md:-translate-y-6 shadow-2xl reveal">
+<span class="font-label-caps text-[10px] text-on-primary mb-2 italic">Most Popular</span>
+<h3 class="font-headline-lg text-2xl uppercase text-on-primary mb-1">PRIVATE TRAINING</h3>
+<p class="font-label-caps text-[10px] text-on-primary/70 mb-8">Coach and Exercise</p>
+<div class="mb-8 text-on-primary">
+<span class="font-display-xl text-7xl">$119</span>
+<span class="font-label-caps text-xs block">per month</span>
+</div>
+<div class="space-y-4 text-sm text-on-primary/80 mb-12 flex-grow">
+<p class="font-label-caps text-xs text-on-primary border-b border-on-primary/30 pb-2 mb-4">Training Session Includes</p>
+<p>Unlimited Sessions</p>
+<p>Private Dedicated Lab</p>
+<p>1-on-1 Performance Coach</p>
+</div>
+<button class="w-full bg-surface text-on-surface py-4 font-display-xl uppercase heavy-snap hover:bg-black">CHOOSE</button>
+</div>
+<!-- Athlete -->
+<div class="bento-card p-12 flex flex-col items-center reveal">
+<h3 class="font-headline-lg text-2xl uppercase text-primary-container mb-1">ATHLETE TRAINING</h3>
+<p class="font-label-caps text-[10px] text-on-secondary-container mb-8">Elite Performance</p>
+<div class="mb-8">
+<span class="font-display-xl text-6xl text-primary-container">$159</span>
+<span class="font-label-caps text-xs block text-on-secondary-container">per month</span>
+</div>
+<div class="space-y-4 text-sm text-on-surface-variant mb-12 flex-grow">
+<p class="font-label-caps text-xs text-on-surface border-b border-outline-variant/30 pb-2 mb-4">Training Session Includes</p>
+<p>Pro Athlete Protocols</p>
+<p>Bio-Feedback Monitoring</p>
+<p>24/7 Concierge Training</p>
+</div>
+<button class="w-full border-2 border-primary-container py-3 font-display-xl uppercase heavy-snap hover:bg-primary-container hover:text-on-primary">CHOOSE</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full pt-16 pb-8 border-t border-outline-variant/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-display-xl text-headline-lg text-primary-container mb-6">IRONPULSE</div>
+<p class="text-on-surface-variant text-body-md max-w-xs">The world's premier performance laboratory for elite athletes and high-achievers.</p>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-caps text-label-caps text-on-surface border-b border-outline-variant/20 pb-2 inline-block">NAVIGATE</h4>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-xs" href="#">Classes</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-xs" href="#">Schedule</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-xs" href="#">Trainers</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-caps text-label-caps text-on-surface border-b border-outline-variant/20 pb-2 inline-block">LEGAL</h4>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-xs" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-xs" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-caps text-label-caps text-on-surface border-b border-outline-variant/20 pb-2 inline-block">FOLLOW</h4>
+<div class="flex space-x-4">
+<a class="w-10 h-10 border border-outline-variant/30 flex items-center justify-center hover:border-primary-container transition-all" href="#">
+<span class="material-symbols-outlined text-sm">share</span>
+</a>
+<a class="w-10 h-10 border border-outline-variant/30 flex items-center justify-center hover:border-primary-container transition-all" href="#">
+<span class="material-symbols-outlined text-sm">hub</span>
+</a>
+</div>
+</div>
+</div>
+<div class="mt-16 px-margin-desktop max-w-container-max mx-auto border-t border-outline-variant/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="font-label-caps text-[10px] text-on-surface-variant/50">© 2024 IRONPULSE PERFORMANCE LABORATORY. ALL RIGHTS RESERVED.</span>
+<div class="flex space-x-8">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-[10px]" href="#">LOCATIONS</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-[10px]" href="#">CONTACT</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Reveal Animation on Scroll
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        // Trigger once on load
+        window.addEventListener("DOMContentLoaded", reveal);
+    </script>
+</body></html>

@@ -236,9 +236,16 @@
       <button class="toggle-btn" id="toggle-yearly" aria-pressed="false">YEARLY <span class="badge">SAVE 20%</span></button>
     </div>
 
+    <!-- Plan Mobile Selector Tabs -->
+    <div class="plan-tabs-mobile reveal" role="tablist" aria-label="Plan selector">
+      <button class="plan-tab-btn active" role="tab" aria-selected="true" aria-controls="plan-basic" data-target="plan-basic">BASIC PLAN</button>
+      <button class="plan-tab-btn" role="tab" aria-selected="false" aria-controls="plan-elite" data-target="plan-elite">PRO BATTLE</button>
+      <button class="plan-tab-btn" role="tab" aria-selected="false" aria-controls="plan-pro" data-target="plan-pro">ELITE WARRIOR</button>
+    </div>
+
     <div class="plans-grid">
       <!-- Basic Plan -->
-      <div class="plan-card brutal-card border-red reveal" data-delay="0" id="plan-basic">
+      <div class="plan-card brutal-card border-red active-mobile-plan reveal" data-delay="0" id="plan-basic">
         <div class="plan-badge-red">BASIC</div>
         <h3 class="plan-name">BASIC PLAN</h3>
         <p class="plan-sub">Essentials of Battle</p>

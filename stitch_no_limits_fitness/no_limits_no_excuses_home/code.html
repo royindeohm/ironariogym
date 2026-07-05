@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NO LIMITS NO EXCUSES | THE BATTLEGROUND</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&amp;family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-slide-up {
+            animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            opacity: 0;
+        }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .brutal-border {
+            border: 2px solid #ffb4aa; /* Primary color */
+        }
+        
+        .text-glow {
+            text-shadow: 0 0 15px rgba(230, 25, 25, 0.4);
+        }
+
+        .bento-card {
+            background: rgba(18, 20, 20, 0.8);
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+        .bento-card:hover {
+            transform: scale(1.02);
+            border-color: #e9c400; /* Tertiary Yellow */
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#1a1c1c",
+                    "on-primary": "#690003",
+                    "surface-container": "#1e2020",
+                    "on-tertiary-container": "#4c3f00",
+                    "on-error": "#690005",
+                    "on-secondary-fixed": "#1b1b1b",
+                    "primary-fixed-dim": "#ffb4aa",
+                    "on-secondary-fixed-variant": "#474747",
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "inverse-primary": "#c0000b",
+                    "outline": "#ae8782",
+                    "on-tertiary-fixed": "#221b00",
+                    "surface-tint": "#ffb4aa",
+                    "tertiary-container": "#c9a900",
+                    "tertiary": "#e9c400",
+                    "inverse-on-surface": "#2f3131",
+                    "primary": "#ffb4aa",
+                    "on-tertiary-fixed-variant": "#544600",
+                    "on-secondary": "#303030",
+                    "on-surface": "#e2e2e2",
+                    "primary-container": "#e61919",
+                    "secondary": "#c6c6c6",
+                    "error-container": "#93000a",
+                    "on-surface-variant": "#e8bcb6",
+                    "on-secondary-container": "#b5b5b5",
+                    "surface": "#121414",
+                    "on-tertiary": "#3a3000",
+                    "on-primary-fixed-variant": "#930006",
+                    "secondary-fixed": "#e2e2e2",
+                    "surface-dim": "#121414",
+                    "on-error-container": "#ffdad6",
+                    "secondary-container": "#474747",
+                    "tertiary-fixed-dim": "#e9c400",
+                    "surface-bright": "#37393a",
+                    "surface-container-lowest": "#0c0f0f",
+                    "outline-variant": "#5e3f3b",
+                    "primary-fixed": "#ffdad5",
+                    "on-primary-fixed": "#410001",
+                    "on-background": "#e2e2e2",
+                    "error": "#ffb4ab",
+                    "tertiary-fixed": "#ffe16d",
+                    "surface-variant": "#333535",
+                    "on-primary-container": "#fffbff",
+                    "surface-container-highest": "#333535",
+                    "background": "#121414",
+                    "surface-container-high": "#282a2b",
+                    "inverse-surface": "#e2e2e2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "120px",
+                    "gutter": "24px",
+                    "base": "8px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Montserrat"],
+                    "display-lg": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "label-bold": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "cta": ["Montserrat"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "display-lg": ["80px", {"lineHeight": "88px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-bold": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "800"}],
+                    "cta": ["20px", {"lineHeight": "24px", "fontWeight": "900"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- Full Page Background Shader -->
+<div class="fixed inset-0 z-[-1] pointer-events-none opacity-40">
+<!-- STITCH_SHADER_START:ANIMATION_3 class="absolute inset-0 w-full h-full" -->
+<div class="absolute inset-0 w-full h-full" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_3" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_3');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+varying vec2 v_texCoord;
+uniform float u_time;
+uniform vec2 u_resolution;
+
+void main() {
+    vec2 uv = v_texCoord;
+    
+    // Create a dark, pulsing red energy field
+    float pulse = 0.5 + 0.5 * sin(u_time * 0.5);
+    float noise = fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);
+    
+    vec3 color1 = vec3(0.05, 0.0, 0.0); // Very dark red/black
+    vec3 color2 = vec3(0.6, 0.0, 0.0); // Intense red
+    
+    float gradient = uv.y * pulse;
+    vec3 finalColor = mix(color1, color2, gradient * 0.3);
+    
+    // Add some "smoke" or movement
+    float move = sin(uv.x * 10.0 + u_time) * 0.05;
+    finalColor += color2 * (0.1 * sin(uv.y * 20.0 - u_time * 2.0 + move));
+    
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_3 -->
+</div>
+<!-- TopNavBar -->
+<nav class="bg-surface sticky top-0 z-50 border-b-2 border-primary flex justify-between items-center w-full px-gutter py-4 max-w-full">
+<div class="font-display-lg text-headline-md italic font-black text-primary uppercase tracking-tighter">
+            NO LIMITS NO EXCUSES
+        </div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-bold uppercase" href="#">MEMBERSHIP</a>
+<a class="text-on-surface font-label-bold uppercase hover:text-primary transition-colors" href="#">FACILITIES</a>
+<a class="text-on-surface font-label-bold uppercase hover:text-primary transition-colors" href="#">TRANSFORMATION</a>
+</div>
+<button class="bg-primary-container text-on-primary-container font-cta text-cta px-6 py-2 hover:bg-primary hover:text-on-primary transition-all duration-300 Active:scale-95 duration-100">
+            JOIN NOW
+        </button>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-screen flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/60 to-transparent z-10"></div>
+<img alt="Hero Image" class="w-full h-full object-cover object-top filter contrast-125 grayscale-[0.2]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS1IyoJoPebnVO0ravIyzCoy3Fwh_RCIFUYNj56K3UrAey5HTGBrYEBM1CgDMJP72nsC4hNzwasSXwc02XbHpEpB493n2ElwIpxCDI7fb3jrPhBdei3SDLW-hLkXMMSUzi_NilMd_D2Ug8XaWsUMJybS_BKBgyxio1IdELeus8lbifECdPuWEbdUtkW2BosTX_t74VEis_MAnz2s4ETnnhVKW2M8moLfYFKo3Z2cm3eSmngTmmcJk6U5ugCqlPU_JvvVkOn0qKb8t8"/>
+</div>
+<div class="relative z-20 w-full max-w-7xl px-margin-desktop text-left">
+<div class="max-w-3xl">
+<h1 class="animate-slide-up font-display-lg text-headline-md md:text-display-lg italic font-black text-on-surface uppercase tracking-tighter leading-none mb-6">
+                    NO LIMITS <br/> <span class="text-primary text-glow">NO EXCUSES</span>
+</h1>
+<p class="animate-slide-up delay-100 font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-10 border-l-4 border-tertiary pl-6">
+                    YOU HAVE TAKEN A GREAT DECISION. YOUR TRANSFORMATION WILL BE THE BEST. THE ONLY COMPETITION IS THE PERSON IN THE MIRROR.
+                </p>
+<div class="animate-slide-up delay-200">
+<button class="group relative inline-flex items-center gap-4 bg-primary-container text-on-primary-container font-cta text-cta px-10 py-5 overflow-hidden transition-all duration-300 hover:pr-14 active:scale-95">
+<span class="relative z-10 uppercase italic">JOIN THE BATTLE</span>
+<span class="material-symbols-outlined absolute right-4 translate-x-10 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all">fitness_center</span>
+<div class="absolute inset-0 bg-tertiary -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out -z-0"></div>
+</button>
+</div>
+</div>
+</div>
+<div class="absolute bottom-10 left-margin-desktop hidden md:block">
+<div class="flex gap-4 animate-slide-up delay-300">
+<div class="w-2 h-16 bg-primary"></div>
+<div class="flex flex-col justify-center">
+<span class="font-label-bold text-tertiary">EST. 2024</span>
+<span class="font-label-bold text-on-surface">KANKINARA ELITE PERFORMANCE</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Features Section: Unisex Facilities -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-lowest relative overflow-hidden">
+<div class="absolute top-0 right-0 p-10 opacity-10 pointer-events-none">
+<span class="font-display-lg text-headline-md italic font-black text-on-surface uppercase leading-none">WARRIORS<br/>ONLY</span>
+</div>
+<div class="mb-20">
+<h2 class="font-display-lg text-headline-md md:text-headline-lg italic font-black text-on-surface uppercase tracking-tighter animate-slide-up">
+                UNISEX <span class="text-primary">BATTLEGROUND</span>
+</h2>
+<div class="w-24 h-2 bg-primary mt-4"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Men's Section -->
+<div class="md:col-span-7 brutal-border bento-card p-10 animate-slide-up relative overflow-hidden group">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-primary text-6xl mb-6">male</span>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase mb-4 italic">FOR MEN</h3>
+<ul class="space-y-4 font-body-md text-on-surface-variant">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_box</span>
+                            HEAVY DUTY POWER RACKS &amp; DUMBBELLS
+                        </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_box</span>
+                            ISOLATION &amp; STRENGTH MACHINES
+                        </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_box</span>
+                            PERSONAL BATTLE COACHING
+                        </li>
+</ul>
+</div>
+</div>
+<!-- Women's Section -->
+<div class="md:col-span-5 brutal-border bento-card p-10 animate-slide-up delay-100 bg-primary-container/10 group">
+<span class="material-symbols-outlined text-tertiary text-6xl mb-6">female</span>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase mb-4 italic">FOR WOMEN</h3>
+<ul class="space-y-4 font-body-md text-on-surface-variant">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary">check_box</span>
+                        DEDICATED STRENGTH ZONES
+                    </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary">check_box</span>
+                        FUNCTIONAL CARDIO ARENA
+                        </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary">check_box</span>
+                        POSTURE &amp; CORE SPECIALIZATION
+                    </li>
+</ul>
+</div>
+<!-- Universal Features -->
+<div class="md:col-span-12 grid grid-cols-1 md:grid-cols-3 gap-gutter mt-10">
+<div class="p-8 bg-surface-container border-t-4 border-tertiary animate-slide-up delay-200">
+<h4 class="font-label-bold text-tertiary uppercase mb-2">HYGIENE</h4>
+<p class="text-on-surface-variant">STEAM ROOMS &amp; SANITIZED LOCKERS</p>
+</div>
+<div class="p-8 bg-surface-container border-t-4 border-primary animate-slide-up delay-300">
+<h4 class="font-label-bold text-primary uppercase mb-2">SUPPLEMENTS</h4>
+<p class="text-on-surface-variant">PRE-WORKOUT BAR &amp; PROTEIN STATION</p>
+</div>
+<div class="p-8 bg-surface-container border-t-4 border-tertiary animate-slide-up delay-100">
+<h4 class="font-label-bold text-tertiary uppercase mb-2">ACCESS</h4>
+<p class="text-on-surface-variant">OPEN EARLY, CLOSE LATE. NO EXCUSES.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="py-section-gap bg-surface relative">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-display-lg text-headline-md md:text-headline-lg italic font-black text-tertiary uppercase animate-slide-up">
+                    NO LIMITS <span class="text-on-surface">PRICING</span>
+</h2>
+<p class="text-on-surface-variant font-label-bold uppercase tracking-widest mt-4">CHOOSE YOUR WEAPON</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+<!-- Basic Plan -->
+<div class="relative bg-surface-container brutal-border p-10 animate-slide-up transition-transform hover:-translate-y-2 group">
+<div class="absolute -top-4 -right-4 bg-primary text-on-primary px-4 py-1 font-label-bold italic">BASIC</div>
+<div class="mb-8">
+<span class="font-display-lg text-display-lg text-on-surface italic font-black">500</span>
+<span class="text-primary font-headline-md">/MO</span>
+</div>
+<ul class="space-y-6 mb-10 text-on-surface-variant font-body-md">
+<li class="flex items-center gap-4"><span class="material-symbols-outlined text-primary">check</span> ALL GYM EQUIPMENT ACCESS</li>
+<li class="flex items-center gap-4"><span class="material-symbols-outlined text-primary">check</span> LOCKER ROOM FACILITIES</li>
+<li class="flex items-center gap-4"><span class="material-symbols-outlined text-primary">close</span> PERSONAL TRAINING</li>
+</ul>
+<button class="w-full py-4 border-2 border-on-surface text-on-surface font-cta hover:bg-on-surface hover:text-surface transition-all">SELECT PLAN</button>
+</div>
+<!-- Pro Plan -->
+<div class="relative bg-surface-container-high border-4 border-tertiary p-10 animate-slide-up delay-100 transition-transform hover:-translate-y-2">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-tertiary text-on-tertiary px-8 py-2 font-label-bold italic font-black uppercase">MOST EXTREME</div>
+<div class="mb-8">
+<span class="font-display-lg text-display-lg text-tertiary italic font-black">1000</span>
+<span class="text-on-surface font-headline-md">/MO</span>
+</div>
+<ul class="space-y-6 mb-10 text-on-surface font-body-md">
+<li class="flex items-center gap-4"><span class="material-symbols-outlined text-tertiary">bolt</span> ALL BASIC FEATURES</li>
+<li class="flex items-center gap-4"><span class="material-symbols-outlined text-tertiary">bolt</span> PERSONAL WORKOUT PLANS</li>
+<li class="flex items-center gap-4"><span class="material-symbols-outlined text-tertiary">bolt</span> DIET &amp; NUTRITION GUIDE</li>
+</ul>
+<button class="w-full py-4 bg-tertiary text-on-tertiary font-cta font-black hover:scale-105 transition-all">START TRANSFORMATION</button>
+</div>
+</div>
+<p class="text-center mt-12 font-label-bold text-on-surface-variant uppercase animate-slide-up delay-300">
+                STARTING FEES: 500 TO 1000 — NO HIDDEN CHARGES
+            </p>
+</div>
+</section>
+<!-- Info Section: Contact & Location -->
+<section class="bg-primary-container py-24 px-margin-mobile md:px-margin-desktop text-on-primary-container overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+<div class="animate-slide-up">
+<h2 class="font-display-lg text-headline-md md:text-headline-lg italic font-black uppercase leading-tight mb-8">
+                    VISIT THE <br/> <span class="text-white">COMMAND CENTER</span>
+</h2>
+<div class="space-y-10">
+<div class="flex items-start gap-6">
+<div class="bg-on-primary-container text-primary-container p-4 rounded-none">
+<span class="material-symbols-outlined text-4xl">location_on</span>
+</div>
+<div>
+<p class="font-label-bold uppercase text-white/70">LOCATION</p>
+<p class="font-headline-md text-headline-md">KANKINARA, WB</p>
+<p class="font-body-md mt-2 opacity-80">NEAR STATION ROAD, WEST BENGAL</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<div class="bg-on-primary-container text-primary-container p-4 rounded-none">
+<span class="material-symbols-outlined text-4xl">call</span>
+</div>
+<div>
+<p class="font-label-bold uppercase text-white/70">RECRUITMENT HOTLINE</p>
+<p class="font-headline-md text-headline-md">9652347820</p>
+<p class="font-body-md mt-2 opacity-80">AVAILABLE 6 AM - 10 PM DAILY</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative animate-slide-up delay-200">
+<div class="w-full aspect-square brutal-border overflow-hidden bg-surface relative grayscale hover:grayscale-0 transition-all duration-700">
+<div class="absolute inset-0 z-10 pointer-events-none border-8 border-primary-container"></div>
+<div class="w-full h-full" data-location="Kankinara, West Bengal" style="">
+<!-- Simulated Map UI -->
+<div class="w-full h-full flex flex-col items-center justify-center bg-surface-container text-center p-10">
+<span class="material-symbols-outlined text-primary text-6xl mb-4">map</span>
+<p class="font-headline-md italic uppercase">Map of Kankinara</p>
+<div class="mt-6 flex gap-2">
+<div class="w-2 h-2 rounded-full bg-primary animate-ping"></div>
+<span class="font-label-bold">BATTLEGROUND DETECTED</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t-4 border-primary px-margin-desktop py-section-gap flex flex-col md:flex-row justify-between items-center w-full gap-base">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="font-display-lg text-headline-md italic font-black text-primary uppercase">NO LIMITS NO EXCUSES</div>
+<p class="font-body-md text-body-md text-on-surface-variant uppercase tracking-tighter">2024 NO LIMITS NO EXCUSES. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-10">
+<a class="text-on-surface-variant font-label-bold uppercase hover:text-tertiary transition-colors" href="#">KANKINARA, WB</a>
+<a class="text-on-surface-variant font-label-bold uppercase hover:text-tertiary transition-colors" href="#">9652347820</a>
+<a class="text-on-surface-variant font-label-bold uppercase hover:text-tertiary transition-colors" href="#">PRIVACY POLICY</a>
+<a class="text-on-surface-variant font-label-bold uppercase hover:text-tertiary transition-colors" href="#">TERMS OF BATTLE</a>
+</div>
+<div class="flex gap-6">
+<a class="w-12 h-12 brutal-border flex items-center justify-center hover:bg-primary transition-all group" href="#">
+<span class="material-symbols-outlined text-on-surface group-hover:text-surface">fitness_center</span>
+</a>
+<a class="w-12 h-12 brutal-border flex items-center justify-center hover:bg-primary transition-all group" href="#">
+<span class="material-symbols-outlined text-on-surface group-hover:text-surface">person</span>
+</a>
+</div>
+</footer>
+<script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-slide-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-slide-up').forEach(el => {
+            el.style.opacity = '0';
+            observer.observe(el);
+        });
+
+        // Sticky Navbar subtle effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-surface/90', 'backdrop-blur-md');
+            } else {
+                nav.classList.remove('bg-surface/90', 'backdrop-blur-md');
+            }
+        });
+    </script>
+</body></html>

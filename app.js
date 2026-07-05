@@ -243,6 +243,32 @@ void main() {
   }
 
   /* ──────────────────────────────────────────
+     6b. MOBILE PLAN TAB SWITCHER
+  ─────────────────────────────────────────── */
+  const planTabBtns = document.querySelectorAll('.plan-tab-btn');
+  const planCards   = document.querySelectorAll('.plan-card');
+
+  if (planTabBtns.length) {
+    planTabBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        // Update tab active states
+        planTabBtns.forEach((b) => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        // Show the targeted plan card, hide others
+        const targetId = btn.dataset.target;
+        planCards.forEach((card) => {
+          card.classList.toggle('active-mobile-plan', card.id === targetId);
+        });
+      });
+    });
+  }
+
+  /* ──────────────────────────────────────────
      7. TESTIMONIALS CAROUSEL
   ─────────────────────────────────────────── */
   const track    = document.getElementById('testi-track');
