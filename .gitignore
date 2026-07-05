@@ -1,0 +1,7 @@
+# Git ignore for IRONPULSE gym website project
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
+.env
+stitch_elite_motion_fitness.zip

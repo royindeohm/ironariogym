@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IRONPULSE | Performance Laboratory</title>
+  <meta name="description" content="IRONPULSE — The elite performance gym for high-achievers. Industrial-grade equipment, certified trainers, and flexible membership plans. Join the cult. Forge your legacy." />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Hanken+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ─────────────────────────────────────────
+     NAVBAR
+───────────────────────────────────────── -->
+<header id="navbar" role="banner">
+  <nav class="nav-inner" aria-label="Main navigation">
+    <a href="#home" class="logo" aria-label="IRONPULSE home">IRONPULSE</a>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#plans" class="nav-link">Plans</a></li>
+      <li><a href="#facilities" class="nav-link">Facilities</a></li>
+      <li><a href="#trainers" class="nav-link">Trainers</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+
+    <a href="#contact" class="btn btn-primary nav-cta">JOIN NOW</a>
+  </nav>
+</header>
+
+<!-- ─────────────────────────────────────────
+     HERO
+───────────────────────────────────────── -->
+<section id="home" class="hero" aria-label="Hero section">
+  <div class="hero-bg" aria-hidden="true">
+    <img
+      src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80"
+      alt=""
+      class="hero-img"
+      loading="eager"
+    />
+    <div class="hero-overlay"></div>
+    <div class="hero-grid-overlay" aria-hidden="true"></div>
+  </div>
+
+  <div class="hero-content container">
+    <span class="label-tag reveal" data-delay="0">EST. MMXXIV — PERFORMANCE LABORATORY</span>
+    <h1 class="hero-headline reveal" data-delay="100">
+      FORGE<br/><span class="amber">YOUR</span><br/>LEGACY
+    </h1>
+    <p class="hero-sub reveal" data-delay="200">
+      Elite performance laboratory for the dedicated. We don't just train — we engineer human potential through scientific rigor and industrial-grade discipline.
+    </p>
+    <div class="hero-ctas reveal" data-delay="300">
+      <a
+        href="https://wa.me/919999999999?text=Hi%2C%20I%27m%20interested%20in%20joining%20IRONPULSE.%20Please%20share%20more%20details."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary btn-lg"
+        id="hero-whatsapp-cta"
+        aria-label="Join Now via WhatsApp"
+      >
+        <span class="material-symbols-outlined" aria-hidden="true">chat</span>
+        JOIN NOW VIA WHATSAPP
+      </a>
+      <a href="#plans" class="btn btn-ghost btn-lg" id="hero-plans-cta">VIEW PLANS</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint" aria-hidden="true">
+    <span class="material-symbols-outlined">keyboard_double_arrow_down</span>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────
+     ABOUT / WHY CHOOSE US
+───────────────────────────────────────── -->
+<section id="about" class="section about-section" aria-label="About IRONPULSE">
+  <div class="container about-grid">
+    <!-- Text Side -->
+    <div class="about-text reveal">
+      <span class="label-tag">OUR PHILOSOPHY</span>
+      <h2 class="section-headline">THE LABORATORY<br/>OF EXCELLENCE</h2>
+      <p class="body-text">
+        At IRONPULSE, we view the body as a machine that requires precise calibration. Our mission is to provide the high-octane environment needed for high-achievers to break through their biological ceilings.
+      </p>
+      <p class="body-text" style="margin-top: 1rem;">
+        We combine industrial-grade equipment with data-driven coaching methodologies, forging a space where discipline meets science — and limits are merely starting points.
+      </p>
+      <div class="about-stats">
+        <div class="about-stat">
+          <span class="stat-num amber" data-target="99">0</span><span class="amber">%</span>
+          <span class="stat-label">SUCCESS RATE</span>
+        </div>
+        <div class="about-stat">
+          <span class="stat-num amber">24/7</span>
+          <span class="stat-label">ELITE ACCESS</span>
+        </div>
+        <div class="about-stat">
+          <span class="stat-num amber" data-target="500">0</span><span class="amber">+</span>
+          <span class="stat-label">MEMBERS</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Image Side -->
+    <div class="about-img-wrap reveal" data-delay="150">
+      <div class="about-img-frame">
+        <img
+          src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80"
+          alt="Athlete performing a heavy deadlift in IRONPULSE gym"
+          loading="lazy"
+          class="about-img"
+        />
+        <div class="about-img-accent" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- USP Cards -->
+  <div class="container usp-grid" aria-label="Why choose IRONPULSE">
+    <div class="usp-card reveal" data-delay="0">
+      <div class="usp-icon" aria-hidden="true">
+        <span class="material-symbols-outlined">verified</span>
+      </div>
+      <h3 class="usp-title">CERTIFIED TRAINERS</h3>
+      <p class="usp-body">All coaches hold elite certifications and average 8+ years of professional experience engineering peak performance.</p>
+    </div>
+    <div class="usp-card reveal" data-delay="100">
+      <div class="usp-icon" aria-hidden="true">
+        <span class="material-symbols-outlined">fitness_center</span>
+      </div>
+      <h3 class="usp-title">MODERN EQUIPMENT</h3>
+      <p class="usp-body">Industrial-grade, commercial equipment sourced from the world's top manufacturers. No compromises, no excuses.</p>
+    </div>
+    <div class="usp-card reveal" data-delay="200">
+      <div class="usp-icon" aria-hidden="true">
+        <span class="material-symbols-outlined">calendar_month</span>
+      </div>
+      <h3 class="usp-title">FLEXIBLE PLANS</h3>
+      <p class="usp-body">From casual trainees to elite athletes — our tiered memberships adapt to your intensity, schedule, and goals.</p>
+    </div>
+    <div class="usp-card reveal" data-delay="300">
+      <div class="usp-icon" aria-hidden="true">
+        <span class="material-symbols-outlined">groups</span>
+      </div>
+      <h3 class="usp-title">COMMUNITY VIBE</h3>
+      <p class="usp-body">Join a tribe of high-achievers who push each other harder. The IRONPULSE community is built on mutual accountability.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────
+     MEMBERSHIP PLANS
+───────────────────────────────────────── -->
+<section id="plans" class="section plans-section" aria-label="Membership plans">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="amber-bar" aria-hidden="true"></div>
+      <span class="label-tag">START THE PROCESS</span>
+      <h2 class="section-headline amber">CHOOSE YOUR PLAN</h2>
+      <p class="section-sub">Precision engineering for your physical potential. Pick the tier that matches your intensity.</p>
+    </div>
+
+    <!-- Toggle -->
+    <div class="billing-toggle reveal" role="group" aria-label="Billing period">
+      <button class="toggle-btn active" id="toggle-monthly" aria-pressed="true">MONTHLY</button>
+      <button class="toggle-btn" id="toggle-yearly" aria-pressed="false">YEARLY <span class="badge">SAVE 20%</span></button>
+    </div>
+
+    <div class="plans-grid">
+      <!-- Basic -->
+      <div class="plan-card reveal" data-delay="0" id="plan-basic">
+        <h3 class="plan-name">LITE TRAINING</h3>
+        <p class="plan-sub">Foundation &amp; Discipline</p>
+        <div class="plan-price">
+          <span class="price-amount" data-monthly="₹1,999" data-yearly="₹1,599">₹1,999</span>
+          <span class="price-period">/ month</span>
+        </div>
+        <ul class="plan-features" aria-label="Lite Training features">
+          <li class="feature included"><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> 60-Minute Group Sessions</li>
+          <li class="feature included"><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Standard Gym Access</li>
+          <li class="feature included"><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> At-Home Live Workouts</li>
+          <li class="feature excluded"><span class="material-symbols-outlined" aria-hidden="true">cancel</span> Private Locker Room</li>
+          <li class="feature excluded"><span class="material-symbols-outlined" aria-hidden="true">cancel</span> Elite 1-on-1 Trainer</li>
+        </ul>
+        <a
+          href="https://wa.me/919999999999?text=Hi%2C%20I%27m%20interested%20in%20the%20Lite%20Training%20membership%20at%20IRONPULSE.%20Please%20share%20more%20details."
+          target="_blank" rel="noopener noreferrer"
+          class="btn btn-ghost btn-full"
+          aria-label="Choose Lite Training plan via WhatsApp"
+        >CHOOSE PLAN</a>
+      </div>
+
+      <!-- Elite (Featured) -->
+      <div class="plan-card plan-featured reveal" data-delay="100" id="plan-elite">
+        <div class="most-popular" aria-label="Most popular plan">MOST POPULAR</div>
+        <h3 class="plan-name dark">ELITE PERFORMANCE</h3>
+        <p class="plan-sub dark">Peak Optimization</p>
+        <div class="plan-price dark">
+          <span class="price-amount dark" data-monthly="₹3,499" data-yearly="₹2,799">₹3,499</span>
+          <span class="price-period dark">/ month</span>
+        </div>
+        <ul class="plan-features dark" aria-label="Elite Performance features">
+          <li class="feature-featured included"><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Unlimited Session Access</li>
+          <li class="feature-featured included"><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> All Gym Locations</li>
+          <li class="feature-featured included"><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Private Recovery Zone</li>
+          <li class="feature-featured included"><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Nutritional Benchmarking</li>
+          <li class="feature-featured included"><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Monthly Trainer Review</li>
+        </ul>
+        <a
+          href="https://wa.me/919999999999?text=Hi%2C%20I%27m%20interested%20in%20the%20Elite%20Performance%20membership%20at%20IRONPULSE.%20Please%20share%20more%20details."
+          target="_blank" rel="noopener noreferrer"
+          class="btn btn-dark btn-full"
+          aria-label="Choose Elite Performance plan via WhatsApp"
+        >CHOOSE PLAN</a>
+      </div>
+
+      <!-- Athlete Pro -->
+      <div class="plan-card reveal" data-delay="200" id="plan-pro">
+        <div class="pro-badge">RECOMMENDED FOR PROS</div>
+        <h3 class="plan-name">ATHLETE PRO</h3>
+        <p class="plan-sub">Uncompromising Power</p>
+        <div class="plan-price">
+          <span class="price-amount" data-monthly="₹5,499" data-yearly="₹4,399">₹5,499</span>
+          <span class="price-period">/ month</span>
+        </div>
+        <ul class="plan-features" aria-label="Athlete Pro features">
+          <li class="feature included"><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> 24/7 Laboratory Access</li>
+          <li class="feature included"><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Weekly 1-on-1 Coaching</li>
+          <li class="feature included"><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Biometric Data Suite</li>
+          <li class="feature included"><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> VIP Recovery Suite</li>
+          <li class="feature included"><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Sports &amp; Swimming Access</li>
+        </ul>
+        <a
+          href="https://wa.me/919999999999?text=Hi%2C%20I%27m%20interested%20in%20the%20Athlete%20Pro%20membership%20at%20IRONPULSE.%20Please%20share%20more%20details."
+          target="_blank" rel="noopener noreferrer"
+          class="btn btn-ghost btn-full"
+          aria-label="Choose Athlete Pro plan via WhatsApp"
+        >CHOOSE PLAN</a>
+      </div>
+    </div>
+
+    <!-- Annual Badge -->
+    <div class="annual-cta reveal">
+      <span class="label-tag">COMMITMENT REWARDED</span>
+      <p>Want the best value? Contact us for our <strong class="amber">Annual Pass</strong> — exclusive rates, zero monthly hassle.</p>
+      <a
+        href="https://wa.me/919999999999?text=Hi%2C%20I%27m%20interested%20in%20the%20Annual%20membership%20at%20IRONPULSE.%20Please%20share%20details."
+        target="_blank" rel="noopener noreferrer"
+        class="btn btn-primary"
+      >ENQUIRE ANNUAL PASS</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────
+     FACILITIES SHOWCASE
+───────────────────────────────────────── -->
+<section id="facilities" class="section facilities-section" aria-label="Facilities showcase">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label-tag">PULSE COMMUNITY</span>
+      <h2 class="section-headline">GYM ENVIRONMENT</h2>
+      <p class="section-sub">Step inside the laboratory. Every zone engineered for maximum output.</p>
+    </div>
+  </div>
+
+  <div class="facilities-masonry container">
+    <div class="fac-item fac-large reveal" data-delay="0">
+      <img src="https://images.unsplash.com/photo-1534438097545-a2c22c57f2ad?w=900&q=80" alt="Main weightlifting floor at IRONPULSE" loading="lazy" />
+      <div class="fac-label">MAIN FLOOR</div>
+    </div>
+    <div class="fac-item reveal" data-delay="100">
+      <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80" alt="Functional training zone" loading="lazy" />
+      <div class="fac-label">FUNCTIONAL ZONE</div>
+    </div>
+    <div class="fac-item reveal" data-delay="150">
+      <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=600&q=80" alt="Cardio machines zone" loading="lazy" />
+      <div class="fac-label">CARDIO ZONE</div>
+    </div>
+    <div class="fac-item reveal" data-delay="200">
+      <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?w=600&q=80" alt="Recovery and locker area" loading="lazy" />
+      <div class="fac-label">RECOVERY ZONE</div>
+    </div>
+    <div class="fac-item fac-wide reveal" data-delay="250">
+      <img src="https://images.unsplash.com/photo-1600965962361-9035dbfd1c50?w=900&q=80" alt="Premium locker rooms" loading="lazy" />
+      <div class="fac-label">VIP LOCKER ROOMS</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────
+     EQUIPMENT SHOWCASE
+───────────────────────────────────────── -->
+<section class="section equipment-section" aria-label="Equipment showcase">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label-tag">ARSENAL</span>
+      <h2 class="section-headline">INDUSTRIAL-GRADE<br/>EQUIPMENT</h2>
+      <p class="section-sub">Every machine, rack, and cable system is sourced for precision performance — not aesthetics.</p>
+    </div>
+
+    <div class="equipment-grid">
+      <div class="equip-card reveal" data-delay="0">
+        <div class="equip-img-wrap">
+          <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?w=600&q=80" alt="Cardio zone with treadmills and ellipticals" loading="lazy" />
+        </div>
+        <div class="equip-info">
+          <span class="label-tag">ZONE 01</span>
+          <h3 class="equip-name">CARDIO ZONE</h3>
+          <p class="equip-desc">Treadmills, assault bikes, rowers, ski ergs — engineered for metabolic conditioning.</p>
+        </div>
+      </div>
+      <div class="equip-card reveal" data-delay="100">
+        <div class="equip-img-wrap">
+          <img src="https://images.unsplash.com/photo-1534368959876-26bf04f2c947?w=600&q=80" alt="Free weights area with dumbbells and barbells" loading="lazy" />
+        </div>
+        <div class="equip-info">
+          <span class="label-tag">ZONE 02</span>
+          <h3 class="equip-name">FREE WEIGHTS</h3>
+          <p class="equip-desc">Olympic bars, bumper plates, dumbbells up to 100kg, hex bars, and heavy kettlebells.</p>
+        </div>
+      </div>
+      <div class="equip-card reveal" data-delay="200">
+        <div class="equip-img-wrap">
+          <img src="https://images.unsplash.com/photo-1571388208497-71bedc604a34?w=600&q=80" alt="Strength machines and cables" loading="lazy" />
+        </div>
+        <div class="equip-info">
+          <span class="label-tag">ZONE 03</span>
+          <h3 class="equip-name">STRENGTH MACHINES</h3>
+          <p class="equip-desc">Plate-loaded and selectorized machines covering every major muscle group.</p>
+        </div>
+      </div>
+      <div class="equip-card reveal" data-delay="300">
+        <div class="equip-img-wrap">
+          <img src="https://images.unsplash.com/photo-1598971861713-54ad16a7e72e?w=600&q=80" alt="Functional training equipment" loading="lazy" />
+        </div>
+        <div class="equip-info">
+          <span class="label-tag">ZONE 04</span>
+          <h3 class="equip-name">FUNCTIONAL TRAINING</h3>
+          <p class="equip-desc">Rig systems, suspension trainers, battle ropes, plyo boxes, and turf track.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────
+     TRAINERS
+───────────────────────────────────────── -->
+<section id="trainers" class="section trainers-section" aria-label="Our trainers">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label-tag">THE COACHING STAFF</span>
+      <h2 class="section-headline">MEET YOUR<br/>PERFORMANCE ENGINEERS</h2>
+      <p class="section-sub">Every coach is a specialist. Every program is precision-built for your biology.</p>
+    </div>
+
+    <div class="trainers-grid">
+      <div class="trainer-card reveal" data-delay="0">
+        <div class="trainer-img-wrap">
+          <img src="https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=400&q=80" alt="Marcus Reid, Head Strength Coach" loading="lazy" />
+          <div class="trainer-overlay">
+            <p class="trainer-quote">"I don't train athletes. I build machines."</p>
+          </div>
+        </div>
+        <div class="trainer-info">
+          <div class="trainer-badges">
+            <span class="badge-chip">CSCS</span>
+            <span class="badge-chip">NSCA</span>
+          </div>
+          <h3 class="trainer-name">MARCUS REID</h3>
+          <span class="trainer-spec">HEAD STRENGTH COACH</span>
+          <p class="trainer-bio">12 years shaping elite powerlifters and professional athletes. Specializes in CNS optimization and compound movement mastery.</p>
+        </div>
+      </div>
+
+      <div class="trainer-card reveal" data-delay="100">
+        <div class="trainer-img-wrap">
+          <img src="https://images.unsplash.com/photo-1609899537878-48710a3a8f3a?w=400&q=80" alt="Priya Nair, Performance Coach" loading="lazy" />
+          <div class="trainer-overlay">
+            <p class="trainer-quote">"Precision beats intensity every single time."</p>
+          </div>
+        </div>
+        <div class="trainer-info">
+          <div class="trainer-badges">
+            <span class="badge-chip">ACE-CPT</span>
+            <span class="badge-chip">FMS</span>
+          </div>
+          <h3 class="trainer-name">PRIYA NAIR</h3>
+          <span class="trainer-spec">PERFORMANCE &amp; MOBILITY</span>
+          <p class="trainer-bio">8 years of elite sport preparation. Former national-level sprinter turned biomechanics specialist. Masters functional movement patterns.</p>
+        </div>
+      </div>
+
+      <div class="trainer-card reveal" data-delay="200">
+        <div class="trainer-img-wrap">
+          <img src="https://images.unsplash.com/photo-1504798083596-b8b92c2e1d9b?w=400&q=80" alt="Arjun Sharma, Metabolic Conditioning Coach" loading="lazy" />
+          <div class="trainer-overlay">
+            <p class="trainer-quote">"Your potential has no ceiling. Your effort does."</p>
+          </div>
+        </div>
+        <div class="trainer-info">
+          <div class="trainer-badges">
+            <span class="badge-chip">ACSM</span>
+            <span class="badge-chip">CF-L2</span>
+          </div>
+          <h3 class="trainer-name">ARJUN SHARMA</h3>
+          <span class="trainer-spec">METABOLIC CONDITIONING</span>
+          <p class="trainer-bio">Crossfit Level 2 coach with 10 years of high-intensity programming. Expert in aerobic capacity development and anaerobic threshold.</p>
+        </div>
+      </div>
+
+      <div class="trainer-card reveal" data-delay="300">
+        <div class="trainer-img-wrap">
+          <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=400&q=80" alt="Sofia Mendes, Nutrition and Body Composition" loading="lazy" />
+          <div class="trainer-overlay">
+            <p class="trainer-quote">"The kitchen is the first gym. Master it."</p>
+          </div>
+        </div>
+        <div class="trainer-info">
+          <div class="trainer-badges">
+            <span class="badge-chip">CISSN</span>
+            <span class="badge-chip">PN-1</span>
+          </div>
+          <h3 class="trainer-name">SOFIA MENDES</h3>
+          <span class="trainer-spec">NUTRITION &amp; BODY COMPOSITION</span>
+          <p class="trainer-bio">Sports nutritionist with 9 years transforming body composition through precision nutrition periodization and metabolic benchmarking.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────
+     TESTIMONIALS
+───────────────────────────────────────── -->
+<section class="section testimonials-section" aria-label="Member testimonials">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label-tag">SUCCESS STORIES</span>
+      <h2 class="section-headline">THE RESULTS<br/>SPEAK LOUDEST</h2>
+    </div>
+
+    <div class="testimonials-carousel" id="testimonials-carousel" role="region" aria-label="Member testimonials carousel">
+      <div class="testi-track" id="testi-track">
+        <div class="testi-card" role="article">
+          <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+          <p class="testi-text">"IRONPULSE changed my life. In 6 months I dropped 18kg and hit a 160kg deadlift. The trainers here don't let you give up."</p>
+          <div class="testi-author">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="Rohan Kapoor testimonial" loading="lazy" />
+            <div>
+              <strong>ROHAN KAPOOR</strong>
+              <span>Elite Member — 6 Months</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card" role="article">
+          <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+          <p class="testi-text">"The equipment is elite, the coaches are world-class, and the atmosphere pushes you beyond what you thought was possible."</p>
+          <div class="testi-author">
+            <img src="https://images.unsplash.com/photo-1494790108755-2616b25a9ef2?w=80&q=80" alt="Ananya Joshi testimonial" loading="lazy" />
+            <div>
+              <strong>ANANYA JOSHI</strong>
+              <span>Athlete Pro — 1 Year</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card" role="article">
+          <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+          <p class="testi-text">"From 68kg to 85kg of lean muscle in 10 months. The programming at IRONPULSE is scientifically next-level."</p>
+          <div class="testi-author">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80" alt="Dev Malhotra testimonial" loading="lazy" />
+            <div>
+              <strong>DEV MALHOTRA</strong>
+              <span>Athlete Pro — 10 Months</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card" role="article">
+          <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+          <p class="testi-text">"I've trained at gyms all over the country. Nothing comes close to the environment and quality of coaching at IRONPULSE."</p>
+          <div class="testi-author">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&q=80" alt="Meera Patel testimonial" loading="lazy" />
+            <div>
+              <strong>MEERA PATEL</strong>
+              <span>Elite Member — 14 Months</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card" role="article">
+          <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+          <p class="testi-text">"The nutrition coaching alone was worth every rupee. Sofia's protocols rebuilt my relationship with food and performance."</p>
+          <div class="testi-author">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&q=80" alt="Siddharth Rao testimonial" loading="lazy" />
+            <div>
+              <strong>SIDDHARTH RAO</strong>
+              <span>Athlete Pro — 8 Months</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-controls" role="group" aria-label="Carousel controls">
+      <button class="carousel-btn" id="testi-prev" aria-label="Previous testimonial">
+        <span class="material-symbols-outlined">arrow_back</span>
+      </button>
+      <div class="carousel-dots" id="carousel-dots" aria-label="Testimonial indicators"></div>
+      <button class="carousel-btn" id="testi-next" aria-label="Next testimonial">
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────
+     GYM STATS
+───────────────────────────────────────── -->
+<section class="section stats-section" aria-label="Gym statistics">
+  <div class="stats-bg" aria-hidden="true"></div>
+  <div class="container stats-grid">
+    <div class="stat-item reveal" data-delay="0">
+      <span class="stat-big amber counter" data-target="500" data-suffix="+">0</span>
+      <span class="stat-big-label">ELITE MEMBERS</span>
+    </div>
+    <div class="stat-item reveal" data-delay="100">
+      <span class="stat-big amber counter" data-target="10" data-suffix="+">0</span>
+      <span class="stat-big-label">YEARS FORGING</span>
+    </div>
+    <div class="stat-item reveal" data-delay="200">
+      <span class="stat-big amber counter" data-target="15" data-suffix="+">0</span>
+      <span class="stat-big-label">EXPERT TRAINERS</span>
+    </div>
+    <div class="stat-item reveal" data-delay="300">
+      <span class="stat-big amber counter" data-target="20" data-suffix="+">0</span>
+      <span class="stat-big-label">EQUIPMENT TYPES</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────
+     PROGRAMS (Bento Grid)
+───────────────────────────────────────── -->
+<section class="section programs-section" aria-label="Training programs">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label-tag">ENGINEERED PROGRAMS</span>
+      <h2 class="section-headline">CHOOSE YOUR PATH<br/>TO DOMINANCE</h2>
+    </div>
+
+    <div class="bento-grid">
+      <div class="bento-card bento-lg reveal" data-delay="0">
+        <img src="https://images.unsplash.com/photo-1532384748853-8f54a8f476e2?w=900&q=80" alt="Absolute Strength Program — power racks and barbell" loading="lazy" />
+        <div class="bento-overlay">
+          <span class="label-tag">PROGRAM 01</span>
+          <h3>ABSOLUTE STRENGTH</h3>
+          <p>Focus on compound movements and CNS adaptation to build a foundation of raw power.</p>
+        </div>
+      </div>
+      <div class="bento-card bento-sm reveal" data-delay="100">
+        <img src="https://images.unsplash.com/photo-1611690024989-5773cdc6e3d8?w=600&q=80" alt="Performance program — athlete training" loading="lazy" />
+        <div class="bento-overlay">
+          <span class="label-tag">PROGRAM 02</span>
+          <h3>PERFORMANCE</h3>
+        </div>
+      </div>
+      <div class="bento-card bento-full reveal" data-delay="200">
+        <img src="https://images.unsplash.com/photo-1483721310020-03333e577078?w=1200&q=80" alt="Metabolic Hypertrophy — high volume training" loading="lazy" />
+        <div class="bento-overlay bento-row">
+          <div>
+            <span class="label-tag">PROGRAM 03</span>
+            <h3>METABOLIC HYPERTROPHY</h3>
+          </div>
+          <p class="bento-desc-side">Advanced aesthetic development through volume-focused protocols and nutritional precision.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────
+     FAQ
+───────────────────────────────────────── -->
+<section class="section faq-section" aria-label="Frequently asked questions">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label-tag">GOT QUESTIONS?</span>
+      <h2 class="section-headline">FREQUENTLY ASKED</h2>
+    </div>
+
+    <div class="faq-list" role="list">
+      <div class="faq-item reveal" data-delay="0" role="listitem">
+        <button class="faq-question" aria-expanded="false" id="faq-1">
+          What are IRONPULSE's operating hours?
+          <span class="faq-icon material-symbols-outlined" aria-hidden="true">add</span>
+        </button>
+        <div class="faq-answer" role="region" aria-labelledby="faq-1">
+          <p>IRONPULSE is open 365 days a year. Weekdays: 5:00 AM – 11:00 PM. Weekends &amp; Holidays: 6:00 AM – 10:00 PM. Athlete Pro members enjoy 24/7 keycard access to the main floor.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal" data-delay="50" role="listitem">
+        <button class="faq-question" aria-expanded="false" id="faq-2">
+          Can I freeze or pause my membership?
+          <span class="faq-icon material-symbols-outlined" aria-hidden="true">add</span>
+        </button>
+        <div class="faq-answer" role="region" aria-labelledby="faq-2">
+          <p>Yes. All plans allow one freeze per year for up to 30 days — no questions asked. Contact us via WhatsApp or email to initiate a pause. Freezes are processed within 24 hours.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal" data-delay="100" role="listitem">
+        <button class="faq-question" aria-expanded="false" id="faq-3">
+          Is there an induction or orientation session for new members?
+          <span class="faq-icon material-symbols-outlined" aria-hidden="true">add</span>
+        </button>
+        <div class="faq-answer" role="region" aria-labelledby="faq-3">
+          <p>Absolutely. Every new member receives a complimentary 60-minute diagnostic session with one of our performance engineers to assess movement quality, set baselines, and define your program protocol.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal" data-delay="150" role="listitem">
+        <button class="faq-question" aria-expanded="false" id="faq-4">
+          Do you offer personal training in addition to memberships?
+          <span class="faq-icon material-symbols-outlined" aria-hidden="true">add</span>
+        </button>
+        <div class="faq-answer" role="region" aria-labelledby="faq-4">
+          <p>Yes. Personal training packages are available à la carte or as part of the Elite Performance and Athlete Pro tiers. Sessions run 60–90 minutes and are fully customized to your periodization cycle.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal" data-delay="200" role="listitem">
+        <button class="faq-question" aria-expanded="false" id="faq-5">
+          Are there group classes included?
+          <span class="faq-icon material-symbols-outlined" aria-hidden="true">add</span>
+        </button>
+        <div class="faq-answer" role="region" aria-labelledby="faq-5">
+          <p>Yes. Elite Performance and Athlete Pro tiers include unlimited group classes — from HIIT and metabolic conditioning to yoga and mobility. Lite Training includes 4 group classes per month.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal" data-delay="250" role="listitem">
+        <button class="faq-question" aria-expanded="false" id="faq-6">
+          How do I sign up — do I need to visit in person?
+          <span class="faq-icon material-symbols-outlined" aria-hidden="true">add</span>
+        </button>
+        <div class="faq-answer" role="region" aria-labelledby="faq-6">
+          <p>You can initiate your membership entirely via WhatsApp or email. Our team will guide you through the process, schedule your orientation, and activate your access — all without needing a physical visit first.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────
+     CONTACT / JOIN SECTION
+───────────────────────────────────────── -->
+<section id="contact" class="section contact-section" aria-label="Contact and location">
+  <div class="container contact-grid">
+    <!-- Left: Info -->
+    <div class="contact-info reveal">
+      <span class="label-tag">GET IN TOUCH</span>
+      <h2 class="section-headline">READY TO<br/><span class="amber">FORGE YOUR</span><br/>LEGACY?</h2>
+      <p class="body-text">Reach out via WhatsApp or email. Our team responds within 2 hours during operating hours.</p>
+
+      <div class="contact-details">
+        <div class="contact-item">
+          <span class="material-symbols-outlined amber" aria-hidden="true">location_on</span>
+          <div>
+            <strong>IRONPULSE DOWNTOWN LABS</strong>
+            <span>42, Industrial District, Phase II<br/>Mumbai, Maharashtra 400001</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="material-symbols-outlined amber" aria-hidden="true">schedule</span>
+          <div>
+            <strong>OPERATING HOURS</strong>
+            <span>Mon–Fri: 5:00 AM – 11:00 PM<br/>Sat–Sun: 6:00 AM – 10:00 PM</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="material-symbols-outlined amber" aria-hidden="true">phone</span>
+          <div>
+            <strong>CONTACT</strong>
+            <span>+91 99999 99999</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-ctas">
+        <a
+          href="https://wa.me/919999999999?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20IRONPULSE%20gym%20memberships."
+          target="_blank" rel="noopener noreferrer"
+          class="btn btn-primary btn-lg"
+          id="contact-whatsapp"
+          aria-label="Chat on WhatsApp"
+        >
+          <span class="material-symbols-outlined" aria-hidden="true">chat</span>
+          CHAT ON WHATSAPP
+        </a>
+        <a
+          href="mailto:info@ironpulse.in?subject=Membership%20Enquiry&body=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20IRONPULSE%20memberships."
+          class="btn btn-ghost btn-lg"
+          id="contact-email"
+          aria-label="Send an email"
+        >
+          <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+          SEND AN EMAIL
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: Map -->
+    <div class="contact-map reveal" data-delay="150">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.817!2d72.8776559!3d18.9321109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1c73a0b3fab%3A0x1da49e9f76e24ed5!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1234567890"
+        width="100%" height="100%"
+        style="border:0; filter: grayscale(100%) invert(90%);"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="IRONPULSE gym location map"
+        aria-label="Map showing IRONPULSE gym location in Mumbai"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────
+     FOOTER
+───────────────────────────────────────── -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-top container">
+    <!-- Brand -->
+    <div class="footer-brand">
+      <a href="#home" class="logo footer-logo" aria-label="IRONPULSE home">IRONPULSE</a>
+      <p class="footer-tagline">The world's premier performance laboratory for elite athletes and high-achievers.</p>
+      <div class="footer-social" aria-label="Social media links">
+        <a href="#" class="social-btn" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="#" class="social-btn" aria-label="YouTube">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        </a>
+        <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h4 class="footer-col-title">NAVIGATE</h4>
+      <ul role="list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#plans">Membership Plans</a></li>
+        <li><a href="#facilities">Facilities</a></li>
+        <li><a href="#trainers">Trainers</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Programs -->
+    <div class="footer-links">
+      <h4 class="footer-col-title">PROGRAMS</h4>
+      <ul role="list">
+        <li><a href="#plans">Lite Training</a></li>
+        <li><a href="#plans">Elite Performance</a></li>
+        <li><a href="#plans">Athlete Pro</a></li>
+        <li><a href="#plans">Annual Pass</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-links">
+      <h4 class="footer-col-title">REACH US</h4>
+      <ul role="list">
+        <li>
+          <a href="https://wa.me/919999999999?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20IRONPULSE." target="_blank" rel="noopener noreferrer">
+            <span class="material-symbols-outlined" aria-hidden="true" style="font-size:14px;">chat</span> WhatsApp Us
+          </a>
+        </li>
+        <li>
+          <a href="mailto:info@ironpulse.in">
+            <span class="material-symbols-outlined" aria-hidden="true" style="font-size:14px;">mail</span> info@ironpulse.in
+          </a>
+        </li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom container">
+    <span>© 2024 IRONPULSE PERFORMANCE LABORATORY. ALL RIGHTS RESERVED.</span>
+    <div class="footer-bottom-links">
+      <a href="#contact">LOCATIONS</a>
+      <a href="#contact">CONTACT</a>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
